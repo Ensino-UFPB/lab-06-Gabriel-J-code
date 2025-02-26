@@ -50,26 +50,25 @@
         </section>
     </main>
     
-    <script src="js\simple-mask-money.umd.js">
-        document.addEventListener("DOMContentLoaded", function() {
-            const optionsUSD = {
-                afterFormat(e) { console.log('afterFormat', e); },
-                allowNegative: false,
-                beforeFormat(e) { console.log('beforeFormat', e); },
-                negativeSignAfter: false,
-                prefix: 'R$ ',
-                suffix: '',
-                fixed: true,
-                fractionDigits: 2,
-                decimalSeparator: ',',
-                thousandsSeparator: '.',
-                cursor: 'end'
-            };
-
-            // Corrigindo a seleção do input
-            const inputPreco = document.querySelector("#preco");
-            SimpleMaskMoney.setMask(inputPreco, optionsUSD);
-        });
-    </script>
+    <script>
+        const precoInput = document.getElementById("preco")
+        const optionsUSD = {
+          afterFormat(e) { console.log('afterFormat', e); },
+          allowNegative: false,
+          beforeFormat(e) { console.log('beforeFormat', e); },
+          negativeSignAfter: false,
+          prefix: 'R$',
+          suffix: '',
+          fixed: true,
+          fractionDigits: 2,
+          decimalSeparator: ',',
+          thousandsSeparator: '.',
+          cursor: 'end'
+        };
+    
+        SimpleMaskMoney.setMask(precoInput, optionsUSD);
+        precoInput.addEventListener("input",()=>{
+            console.log(SimpleMaskMoney.formatToNumber(precoInput.value))});
+      </script>
 </body>
 </html>
