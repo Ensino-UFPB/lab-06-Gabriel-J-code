@@ -25,9 +25,18 @@ const mensagensDeErro = {
     nome: {
         valueMissing: 'O campo de nome não pode estar vazio.'
     },
+    phone: {
+        valueMissing: 'O campo de telefone não pode estar vazio.',
+        typeMismatch: 'O telefone digitado não é válido.',
+        patternMismatch:'O telefone tem que esta dentro de um dos sequintes padrões: 83991313434, (83)991313434, (83)99131-3434, 8399131-3434'
+    },
     email: {
         valueMissing: 'O campo de email não pode estar vazio.',
         typeMismatch: 'O email digitado não é válido.'
+    },
+    instagram: {
+        valueMissing: 'O campo de instagram não pode estar vazio.',
+        patternMismatch:'O campo intagram tem começar com "@" e ter entre 1 e 30 caracteres apois o simbolo'
     },
     senha: {
         valueMissing: 'O campo de senha não pode estar vazio.',
